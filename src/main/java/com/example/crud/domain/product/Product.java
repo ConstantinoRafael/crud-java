@@ -23,7 +23,10 @@ public class Product {
     @Id @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
     private  String name;
-    private Number prices_in_cents;
+    private Integer prices_in_cents;
 
-    public
+    public Product(RequestProduct requestProduct) {
+        this.name = requestProduct.name();
+        this.prices_in_cents = requestProduct.prices_in_cents();
+    }
 }
