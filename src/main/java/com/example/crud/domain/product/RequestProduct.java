@@ -1,5 +1,11 @@
 package com.example.crud.domain.product;
 
-public record RequestProduct(String name, Integer prices_in_cents) {
-    
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
+public record RequestProduct(
+                String id,
+                @NotBlank String name,
+                @NotNull Integer prices_in_cents) {
+
 }
